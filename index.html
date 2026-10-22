@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Курс ТРПО — основы frontend-разработки</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#about">
+        <img class="brand__logo" src="images/logo.svg" alt="" width="56" height="32">
+        <span class="brand__name">Курс ТРПО</span>
+      </a>
+      <!-- Пункты меню сформированы по data/navigation.json: label → текст ссылки, target → id раздела -->
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="#about">О курсе</a></li>
+          <li><a class="main-nav__link" href="#tracks">Направления</a></li>
+          <li><a class="main-nav__link" href="#schedule">Расписание</a></li>
+          <li><a class="main-nav__link" href="#signup">Регистрация</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+
+    <section id="about" class="section hero" aria-labelledby="about-title">
+      <div class="hero__text">
+        <span class="pill">3 семестр · 2026–2027</span>
+        <h1 id="about-title">Технологии разработки программного обеспечения</h1>
+        <p class="lead">
+          Курс знакомит с основами frontend-разработки: от семантической HTML-разметки
+          и CSS до работы с Git, формами, доступностью интерфейса и инструментами DevTools.
+        </p>
+        <p class="muted">6 направлений · 48 баллов нагрузки · итог — собственный проект в Git</p>
+        <a class="btn" href="#signup">Записаться на курс</a>
+      </div>
+      <figure class="hero__figure">
+        <img class="hero__image" src="images/cover.svg"
+             alt="Обложка курса: схематичная веб-страница с заголовком HTML + CSS и кнопкой"
+             width="900" height="520">
+        <figcaption class="muted">Итог первой практики — адаптивная страница на HTML и CSS</figcaption>
+      </figure>
+    </section>
+
+    <!-- Карточки: по одной на строку data/content.csv (id;title;category;description;value) -->
+    <section id="tracks" class="section" aria-labelledby="tracks-title">
+      <h2 id="tracks-title">Направления</h2>
+      <p class="muted">Шесть тем курса. Оценка сложности — от 1 до 10.</p>
+      <ul class="cards">
+        <li class="card-item">
+          <article class="card" id="track-1">
+            <span class="card__category">Основа</span>
+            <h3 class="card__title">HTML</h3>
+            <p class="card__text">Структура и семантика документа</p>
+            <p class="card__value">Сложность: <strong>8</strong> / 10</p>
+          </article>
+        </li>
+        <li class="card-item">
+          <article class="card" id="track-2">
+            <span class="card__category">Оформление</span>
+            <h3 class="card__title">CSS</h3>
+            <p class="card__text">Стили и адаптивность</p>
+            <p class="card__value">Сложность: <strong>9</strong> / 10</p>
+          </article>
+        </li>
+        <li class="card-item">
+          <article class="card" id="track-3">
+            <span class="card__category">Инструменты</span>
+            <h3 class="card__title">Git</h3>
+            <p class="card__text">История изменений</p>
+            <p class="card__value">Сложность: <strong>7</strong> / 10</p>
+          </article>
+        </li>
+        <li class="card-item">
+          <article class="card" id="track-4">
+            <span class="card__category">HTML</span>
+            <h3 class="card__title">Forms</h3>
+            <p class="card__text">Пользовательский ввод</p>
+            <p class="card__value">Сложность: <strong>6</strong> / 10</p>
+          </article>
+        </li>
+        <li class="card-item">
+          <article class="card" id="track-5">
+            <span class="card__category">Качество</span>
+            <h3 class="card__title">Accessibility</h3>
+            <p class="card__text">Доступность интерфейса</p>
+            <p class="card__value">Сложность: <strong>10</strong> / 10</p>
+          </article>
+        </li>
+        <li class="card-item">
+          <article class="card" id="track-6">
+            <span class="card__category">Проверка</span>
+            <h3 class="card__title">DevTools</h3>
+            <p class="card__text">Исследование DOM и стилей</p>
+            <p class="card__value">Сложность: <strong>8</strong> / 10</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Таблица: те же строки content.csv, value → сложность, часы = value × 2 -->
+    <section id="schedule" class="section" aria-labelledby="schedule-title">
+      <h2 id="schedule-title">Расписание</h2>
+      <div class="table-wrap">
+        <table class="schedule">
+          <caption>Порядок тем и нагрузка по неделям</caption>
+          <thead>
+            <tr>
+              <th scope="col">Неделя</th>
+              <th scope="col">Тема</th>
+              <th scope="col">Категория</th>
+              <th scope="col">Содержание</th>
+              <th scope="col" class="num">Сложность</th>
+              <th scope="col" class="num">Часы</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><a href="#track-1">HTML</a></td><td>Основа</td><td>Структура и семантика документа</td><td class="num">8</td><td class="num">16</td></tr>
+            <tr><td>2</td><td><a href="#track-2">CSS</a></td><td>Оформление</td><td>Стили и адаптивность</td><td class="num">9</td><td class="num">18</td></tr>
+            <tr><td>3</td><td><a href="#track-3">Git</a></td><td>Инструменты</td><td>История изменений</td><td class="num">7</td><td class="num">14</td></tr>
+            <tr><td>4</td><td><a href="#track-4">Forms</a></td><td>HTML</td><td>Пользовательский ввод</td><td class="num">6</td><td class="num">12</td></tr>
+            <tr><td>5</td><td><a href="#track-5">Accessibility</a></td><td>Качество</td><td>Доступность интерфейса</td><td class="num">10</td><td class="num">20</td></tr>
+            <tr><td>6</td><td><a href="#track-6">DevTools</a></td><td>Проверка</td><td>Исследование DOM и стилей</td><td class="num">8</td><td class="num">16</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><th scope="row" colspan="4">Итого</th><td class="num">48</td><td class="num">96</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section id="signup" class="section" aria-labelledby="signup-title">
+      <h2 id="signup-title">Регистрация</h2>
+      <p class="muted">Поля, отмеченные <span aria-hidden="true">*</span><span class="visually-hidden">звёздочкой</span>, обязательны.</p>
+      <form class="form" action="#signup" method="post">
+        <div class="form__row">
+          <div class="form__field">
+            <label for="name">ФИО <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" required minlength="3" maxlength="80" autocomplete="name">
+          </div>
+          <div class="form__field">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" required maxlength="100" autocomplete="email" placeholder="student@example.ru">
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field">
+            <label for="group">Учебная группа <span aria-hidden="true">*</span></label>
+            <input id="group" name="group" type="text" required pattern="[А-ЯЁA-Z]{4}-\d{2}-\d{2}" placeholder="ИКБО-01-25" aria-describedby="group-hint">
+            <small id="group-hint" class="form__hint">Формат: ИКБО-01-25</small>
+          </div>
+          <div class="form__field">
+            <label for="course">Курс <span aria-hidden="true">*</span></label>
+            <input id="course" name="course" type="number" required min="1" max="6" step="1" value="2">
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="form__field">
+            <label for="track">Приоритетное направление <span aria-hidden="true">*</span></label>
+            <select id="track" name="track" required>
+              <option value="">— выберите —</option>
+              <option value="1">HTML</option>
+              <option value="2">CSS</option>
+              <option value="3">Git</option>
+              <option value="4">Forms</option>
+              <option value="5">Accessibility</option>
+              <option value="6">DevTools</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="level">Самооценка уровня (1–10)</label>
+            <input id="level" name="level" type="range" min="1" max="10" value="5">
+          </div>
+        </div>
+        <fieldset class="form__fieldset">
+          <legend>Формат участия</legend>
+          <label class="form__choice"><input type="radio" name="mode" value="offline" checked> Очно</label>
+          <label class="form__choice"><input type="radio" name="mode" value="online"> Онлайн</label>
+        </fieldset>
+        <div class="form__field">
+          <label for="comment">Ожидания от курса</label>
+          <textarea id="comment" name="comment" rows="4" maxlength="500" aria-describedby="comment-hint"></textarea>
+          <small id="comment-hint" class="form__hint">Не более 500 символов</small>
+        </div>
+        <label class="form__choice">
+          <input type="checkbox" name="agree" required> Согласен на обработку персональных данных <span aria-hidden="true">*</span>
+        </label>
+        <div class="form__actions">
+          <button class="btn" type="submit">Отправить заявку</button>
+          <button class="btn btn--ghost" type="reset">Очистить</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 Практическая работа №1 · ТРПО</p>
+      <p>Данные: <a href="data/content.csv">content.csv</a>, <a href="data/navigation.json">navigation.json</a></p>
+    </div>
+  </footer>
+</body>
+</html>
